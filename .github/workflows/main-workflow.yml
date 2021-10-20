@@ -49,5 +49,5 @@ jobs:
         
       - name: kubectl test deployments
         run: |
-          kubectl get deployments
+          kubectl get deployments 
       
