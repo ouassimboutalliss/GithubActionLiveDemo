@@ -18,7 +18,8 @@ jobs:
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
+
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -41,7 +42,12 @@ jobs:
           docker build . -t hello-world-nginx:v1 .
           docker run -d -p 80:80 hello-world-nginx:v1
      
-      test the docker container
+      #test the docker container
       - name: Test docker container
         run: |
           curl localhost:80
+        
+      - name: kubectl test deployments
+        run: |
+          kubectl get deployments
+      
