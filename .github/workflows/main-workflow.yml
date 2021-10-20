@@ -39,7 +39,7 @@ jobs:
       # Build and run .-> staat voor 2de lijn
       - name: Build and run Docker file
         run: |
-          docker build . -t hello-world-nginx:v1 .
+          docker build -t hello-world-nginx:v1 .
           docker run -d -p 80:80 hello-world-nginx:v1
      
       #test the docker container
